@@ -1,21 +1,12 @@
 // Code your solution here
 function findMatching(array, string){
-   let match =  array.filter(string => string);
-   if (typeof match === 'undefined'){
-       match = array.filter(string => string.toLowerCase());
-       if (typeof match === 'undefined'){
-           return [];
-       } 
-   }
-   return match;
-   
+   return array.filter(element => element.toLowerCase() === string.toLowerCase());   
 }
-// function findMatching(array, string){
- //   check if filtering for the string returns false:
-//   if the function returns false:
- //       filter using string.toLowerCase 
-//           if filtering using string.toLowerCase returns false:
-//              return empty array
-//       if filtering for the string returns true:
-//            return the solution array
-//           
+
+function fuzzyMatch(array, string){
+    return array.filter(element => element[0]===string[0]);
+}
+
+function matchName(array, string){
+    return array.filter(element=> element.name===string);
+}
